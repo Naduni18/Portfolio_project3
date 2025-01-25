@@ -1,0 +1,1192 @@
+{
+	"info": {
+		"_postman_id": "4ddab2df-386a-46dc-ac72-832abd3b2fd7",
+		"name": "Portfolio project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10122205"
+	},
+	"item": [
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Activities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Activities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Activities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"check activity title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql(pm.collectionVariables.get(\"activity_title\"));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set('activity_title',\"My Activity\")"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":0,\"title\":\"{{activity_title}}\",\"dueDate\":\"2022-09-06T07:36:31.319Z\",\"completed\":true}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Activities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Activities/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Activities/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Activities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Activities/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":0,\"title\":\"My Activity\",\"dueDate\":\"2022-09-06T07:38:23.887Z\",\"completed\":true}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Activities/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Activities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Activities/2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Activities/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Activities",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Authors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Authors",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Authors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"idBook\":1,\"firstName\":\"Naduni\",\"lastName\":\"Warnakulasooriya\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Authors",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Authors/authors/books/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Authors",
+								"authors",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Authors/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":0,\"idBook\":0,\"firstName\":\"Naduni\",\"lastName\":\"Warnakulasooriya\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Authors/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Authors/3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Authors/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Authors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"title\":\"abcdef\",\"description\":\"abcde\",\"pageCount\":4,\"excerpt\":\"asdfg\",\"publishDate\":\"2022-09-06T07:51:57.240Z\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Books",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Books/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Books/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Books/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"title\":\"abc\",\"description\":\"asdfghjkl\",\"pageCount\":30,\"excerpt\":\"asdf\",\"publishDate\":\"2022-09-06T07:53:37.971Z\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Books/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Books/4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Books/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Books",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":2,\"userName\":\"naduni18\",\"password\":\"1234567\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Users/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Users/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Users/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":1,\"userName\":\"naduni18\",\"password\":\"12345687\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/Users/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/Users/5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/Users/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"Users",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CoverPhotos",
+			"item": [
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/CoverPhotos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"check if urls are valid\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    is_url = false;\r",
+									"   for (let i = 0; i < jsonData.length; i++) {\r",
+									"    if(jsonData[i].url.includes(\"https://\")){\r",
+									"        is_url=true;\r",
+									"    }\r",
+									"   \r",
+									"}\r",
+									"    pm.expect(true).to.eql(is_url);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/CoverPhotos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"CoverPhotos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/CoverPhotos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":0,\"idBook\":0,\"url\":\"https://i.stack.imgur.com/9xGMN.png\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/CoverPhotos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"CoverPhotos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/CoverPhotos/books/covers/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/CoverPhotos/books/covers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"CoverPhotos",
+								"books",
+								"covers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/CoverPhotos/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/CoverPhotos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"CoverPhotos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/CoverPhotos/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "text/plain; v=1.0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json; v=1.0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":0,\"idBook\":0,\"url\":\"https://i.stack.imgur.com/9xGMN.png\"}"
+						},
+						"url": {
+							"raw": "{{base_url}}/CoverPhotos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"CoverPhotos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://fakerestapi.azurewebsites.net/api/v1/CoverPhotos/6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/CoverPhotos/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"CoverPhotos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "activity_title",
+			"value": ""
+		}
+	]
+}
